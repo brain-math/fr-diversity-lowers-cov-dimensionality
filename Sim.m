@@ -8,6 +8,8 @@ set(groot, 'defaultAxesTickDir', 'out')
 set(groot,  'defaultAxesTickDirMode', 'manual')
 co = colororder;
 
+rng(1) % Set random seed
+
 %% Main result (Fig. 2a)
 N = 1e3; % Number of neurons (5e3 in the paper)
 nR = 200; % Number of conditions (i.e. operating points)
