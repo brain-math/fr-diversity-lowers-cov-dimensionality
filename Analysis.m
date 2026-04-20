@@ -9,6 +9,8 @@ set(groot, 'defaultAxesFontSize', 20)
 set(groot, 'defaultAxesTickDir', 'out')
 set(groot,  'defaultAxesTickDirMode', 'manual')
 
+rng(1) % Set random seed
+
 % Put downloaded data in the same directory
 addpath ./v1v2/v1-v2_gratings/software/
 dataDir = './v1v2/v1-v2_gratings/mat_neural_data/'; 
