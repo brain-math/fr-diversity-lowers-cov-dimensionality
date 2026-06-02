@@ -10,7 +10,7 @@ co = colororder;
 
 rng(1) % Set random seed
 
-%% Main result (Fig. 2a)
+%% Main result (Fig. 3a)
 N = 1e3; % Number of neurons (5e3 in the paper)
 nR = 200; % Number of conditions (i.e. operating points)
 targetMean = 10; % Population mean firing rate
@@ -34,7 +34,7 @@ figure; plot(DR, DC, 'o'); hold on
 plot(x, y); legend('Simulated data', 'Theory')
 xlabel('D(R)'); ylabel('D(C)')
 
-%% Two-population model (Figs. 1d, S1a)
+%% Two-population model (Fig. S8)
 gRatio = 3; % g22 / g11
 N0 = 500; % Number of neurons in each population
 N = N0 * 2; % Total number of neurons
@@ -43,7 +43,7 @@ gm = 1 / sqrt(targetMean); % Maximum g allowed in the linearizable regime
 
 g0 = 0.6 * gm; % Total connectivity variance parameter
 DR = 0.6; % D(R)
-% Scan through the above two parameters to get Fig. S1a
+% Scan through the above two parameters to get Fig. S8a
 
 % Calculate the g for each block
 g2total = g0^2 * 4;
@@ -78,7 +78,7 @@ end
 figure; plot(1/ratio:1/ratio:nRank, Etheory); hold on
 scatter(1:nRank, Edata, 'filled'); xlabel('Rank'); ylabel('Eigenvalue')
 
-%% [D(R), D(C)] correlation in the two-population model (Figs. S1b)
+%% [D(R), D(C)] correlation in the two-population model
 nRepeat = 100; % Repeat to generate histogram
 nChunk = 20; % Number of conditions
 rAll = zeros(nRepeat, 1); % [D(R), D(C)] correlation for both populations
@@ -92,7 +92,7 @@ g0 = 0.6 * gm; % Total connectivity variance parameter
 
 ratio1 = 3; % g22 / g11
 ratio2 = 2; % g11 / g12
-% Scan through the above two parameters to get Fig. S1b
+% Scan through the above two parameters to get Fig. S8b
 
 % Calculate the g for each block
 g2total = g0^2 * 4;
@@ -115,7 +115,7 @@ figure; histogram(r0All, x); hold on; histogram(rAll, x)
 xlabel('Corr. of D(R) and D(C)'); 
 legend('One population', 'Two populations')
 
-%% Spatial sampling (Fig. S2)
+%% Spatial sampling (Fig. 2)
 N = 1e3; g = 0.2; targetMean = 10; nR = 100;
 Sall = [48, 200, 500, 1000]; % Subpopulation size
 nS = length(Sall);
@@ -224,7 +224,7 @@ end
 delete(h)
 xlabel('D(R)'); ylabel('D(C)'); legend(lH, lStr)
 
-%% Decoding performance vs D(R) (Fig. 5c)
+%% Decoding performance vs D(R) (Fig. 6c)
 N = 100; targetMean = 10; g = 0.2;
 nRepeat = 1000; % Number of repeated experiments
 d0 = 1.5; % Overall scale of distance between mean responses of 2 stimuli
