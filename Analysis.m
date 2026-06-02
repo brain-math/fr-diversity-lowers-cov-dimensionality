@@ -39,7 +39,7 @@ areaData = procsession(neuralData, param);
 % yourself to get nOl, simply uncomment the above code.
 nOl = 3;
 
-%% Calculate and plot D(C) and D(R) (Fig. 3b, left)
+%% Calculate and plot D(C) and D(R) (Fig. 4b, left)
 [DR, DC] = getpr(areaData, nOl);
 
 figure; plot(DR, DC, 'o')
